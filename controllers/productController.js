@@ -1,6 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
 import { productModel } from "../models/productModel.js";
 
+
 //add product
 export const addProduct = async (req, res) => {
   try {
@@ -113,3 +114,5 @@ export const singleProduct = async (req, res) => {
     });
   }
 };
+
+
