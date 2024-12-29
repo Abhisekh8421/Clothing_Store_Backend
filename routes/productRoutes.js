@@ -23,6 +23,6 @@ router.post(
 );
 router.post("/remove", adminAuth, removeProduct);
 router.post("/single", adminAuth, singleProduct);
-router.get("/list", adminAuth, listProduct);
+router.get("/list", listProduct);
 
 export default router;
