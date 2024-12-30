@@ -14,8 +14,8 @@ export const placeOrder = async (req, res) => {
       date: Date.now(),
       address,
     };
-    const newOrder = await orderModel.create(orderdata);
-    await userModel.findByIdAndUpdate(userId, { cartData: {} });
+    await orderModel.create(orderdata);
+    await userModel.findByIdAndUpdate(userId, { cartData: {} }); //once placed the order then we have to clear the cart
     res.json({
       success: true,
       message: "Order Placed",
@@ -24,7 +24,7 @@ export const placeOrder = async (req, res) => {
     console.log(error.message);
     res.json({
       success: false,
-      message: error.message, 
+      message: error.message,
     });
   }
 };
